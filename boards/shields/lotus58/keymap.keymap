@@ -1,0 +1,27 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Default layer
+        default_layer {
+            bindings = <&kp Q>, <&kp W>, <&kp E>, <&kp R>; // Example key bindings
+        };
+
+        // Encoder bindings
+        encoder_left_cw {
+            bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        encoder_left_ccw {
+            bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        encoder_right_cw {
+            bindings = <&inc_dec_kp C_BRIGHTNESS_UP C_BRIGHTNESS_DN>;
+        };
+
+        encoder_right_ccw {
+            bindings = <&inc_dec_kp C_BRIGHTNESS_DN C_BRIGHTNESS_UP>;
+        };
+    };
+};

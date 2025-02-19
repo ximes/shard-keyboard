@@ -1,0 +1,43 @@
+/ {
+    zephyr,user {
+        compatible = "zmk,user-config";
+
+        // Left OLED Display
+        display_left: display_left {
+            compatible = "ssd1306";
+            i2c = <&i2c1>;
+            height = <32>;  // Adjust if using a 64px display
+            width = <128>;
+            reset-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;  // Update based on your wiring
+            label = "OLED_LEFT";
+        };
+
+        // Right OLED Display
+        display_right: display_right {
+            compatible = "ssd1306";
+            i2c = <&i2c1>;
+            height = <32>;
+            width = <128>;
+            reset-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;  // Update based on your wiring
+            label = "OLED_RIGHT";
+        };
+
+        // Left Rotary Encoder
+        encoder_left: encoder_left {
+            compatible = "gpio-encoder";
+            gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+            label = "ENCODER_LEFT";
+            input-clk-freq = <2>;
+            zmk,behavior = <&inc_dec>;
+        };
+
+        // Right Rotary Encoder
+        encoder_right: encoder_right {
+            compatible = "gpio-encoder";
+            gpios = <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, <&gpio0 12 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+            label = "ENCODER_RIGHT";
+            input-clk-freq = <2>;
+            zmk,behavior = <&inc_dec>;
+        };
+    };
+};
