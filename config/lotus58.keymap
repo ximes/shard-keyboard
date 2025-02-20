@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -44,30 +45,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        rgb_toggle {
-            bindings = <&rgb_ug RGB_TOG>;
-        };
-
-        rgb_hue_up {
-            bindings = <&rgb_ug RGB_HUI>;
-        };
-
-        rgb_hue_down {
-            bindings = <&rgb_ug RGB_HUD>;
-        };
-
-        rgb_brightness_up {
-            bindings = <&rgb_ug RGB_BRIU>;
-        };
-
-        rgb_brightness_down {
-            bindings = <&rgb_ug RGB_BRID>;
-        };
-
-        rgb_mode_cycle {
-            bindings = <&rgb_ug RGB_EFF>;
-        };
-
         default_layer {
 //   ------------------------------------------------------------------------------------------------------------
 //  0|  ESC  |  1  |  2  |  3   |  4   |  5   |                     |  6   |  7    |  8    |  9   |   0   |   =   | 11
@@ -79,11 +56,11 @@
 &kp ESC   &kp N1 &kp N2   &kp N3     &fofunc   &kp N5                               &kp N6    &kp N7      &kp N8    &kp N9   &kp N0   &kp EQUAL
 &kp TAB   &kp Q  &kp W    &kp E      &kp R     &kp T                                &kp Y     &kp U       &kp I     &kp O    &kp P    &kp LBKT
 &kp LSHFT &kp A  &sleft   &kp D      &fright   &kp G      &sys_reset         &sys_reset     &kp H     &kp J       &kp K     &kp L    &kp SEMI &mt RSHFT SQT
-&kp LCTRL &kp Z  &kp X    &kp C      &kp V     &kp B      &kp C_MUTE     &rgb_ug RGB_TOGGLE   &kp N     &kp M       &kp COMMA &kp DOT  &kp FSLH &mt RCTRL BSLH
+&kp LCTRL &kp Z  &kp X    &kp C      &kp V     &kp B      &kp C_MUTE     &kp C_PP   &kp N     &kp M       &kp COMMA &kp DOT  &kp FSLH &mt RCTRL BSLH
                           &lt 2 RET  &kp LALT  &kp SPACE  &lt 1 DEL      &lt 2 RET  &kp BSPC  &lt 1 RBKT  &kp LGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rgb_ug RGB_BRIU RGB_BRID>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
