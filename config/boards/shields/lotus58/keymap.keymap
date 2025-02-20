@@ -23,5 +23,29 @@
         encoder_right_ccw {
             bindings = <&inc_dec_kp C_BRIGHTNESS_DN C_BRIGHTNESS_UP>;
         };
+
+        rgb_toggle {
+            bindings = <&rgb_ug RGB_TOG>;
+        };
+
+        rgb_hue_up {
+            bindings = <&rgb_ug RGB_HUI>;
+        };
+
+        rgb_hue_down {
+            bindings = <&rgb_ug RGB_HUD>;
+        };
+
+        rgb_brightness_up {
+            bindings = <&rgb_ug RGB_BRIU>;
+        };
+
+        rgb_brightness_down {
+            bindings = <&rgb_ug RGB_BRID>;
+        };
+
+        rgb_mode_cycle {
+            bindings = <&rgb_ug RGB_EFF>;
+        };
     };
 };
