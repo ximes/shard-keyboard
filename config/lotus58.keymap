@@ -100,3 +100,30 @@
         };
     };
 };
+
+
+#include <dt-bindings/led/led.h>
+
+&pinctrl {
+    led_strip_pins: led_strip_pins {
+        group0 {
+            psels = <NRF_PSEL(0, 13)>; // Change 13 to your LED data pin
+        };
+    };
+};
+
+&led_strip {
+    compatible = "nordic,nrf-led-strip";
+    label = "LED_STRIP";
+    chain-length = <10>; // Number of LEDs in your strip
+    pinctrl-0 = <&led_strip_pins>;
+    pinctrl-names = "default";
+    status = "okay";
+};
+
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
