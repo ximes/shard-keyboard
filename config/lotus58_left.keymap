@@ -34,6 +34,7 @@
     pinctrl-0 = <&led_strip_pins_default>;
     pinctrl-1 = <&led_strip_pins_sleep>;
     pinctrl-names = "default", "sleep";
+    gpios = <&gpio0 6 0>;
 };
 
 
