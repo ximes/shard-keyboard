@@ -11,9 +11,5 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: shard-keyboard
-      remote: shard-keyboard
-      revision: dev
-
   self:
     path: config
