@@ -28,13 +28,13 @@
 &spi3 {
     compatible = "worldsemi,ws2812-gpio";
     status = "okay";
-    label = "LED_STRIP";
     chain-length = <10>;  // Set to your number of LEDs
 
     pinctrl-0 = <&led_strip_pins_default>;
     pinctrl-1 = <&led_strip_pins_sleep>;
     pinctrl-names = "default", "sleep";
-    gpios = <&gpio0 6 0>;
+    in-gpios = <&gpio0 6 0>;
+    color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 };
 
 
