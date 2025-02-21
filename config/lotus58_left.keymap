@@ -25,7 +25,7 @@
     };
 };
 
-&led_strip {
+&led_strip_pins {
     compatible = "worldsemi,ws2812-gpio";
     status = "okay";
     label = "LED_STRIP";
